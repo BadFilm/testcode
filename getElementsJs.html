@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var array = 'https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript?name=lucy&age=14&password=1234567';
+        array = array.split('?');
+        var arrayNew = array[1];
+        var Obj = {};
+        arrayNew = arrayNew.split('&');
+        console.log(arrayNew);
+        for(var i = 0; i < arrayNew.length; i++) {
+            arrayNew[i] = arrayNew[i].split('=');
+        }
+        console.log(arrayNew);
+        for(var i = 0; i < arrayNew.length; i++) {
+            Obj[arrayNew[i] [0]] = arrayNew[i] [1];
+        }
+        console.log(Obj);
+    </script>
+</head>
+<body>
+</body>
+</html>
