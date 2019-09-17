@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #one {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(153, 54, 54);
+        }
+        #two {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="submit" id="btn" value="隐藏" style="display: block">
+    <div id="one"> </div>
+    <script>
+        var flag = 1;
+    62
+        var change = document.getElementById("one");
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            if(flag == 1) {
+                change.id = "two";
+                btn.value = "显示";
+                flag = 2;
+            } else if(flag == 2) {
+                change.id = "one";
+                btn.value = "隐藏";
+                flag = 1;
+            }
+        }
+    </script>
+</body>
+</html>
+
