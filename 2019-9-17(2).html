@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div img {
+            width: 120px;
+            height: 120px;
+        }
+
+        #pic {
+            margin: 30px 0 0 30px;
+        }
+        #none {
+            display: none;
+        }
+        #big {
+            display: block;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div >点击有大图</div>
+    <div id="pic">
+        <a href="a.jpg">
+        <img src="a.jpg"></a>
+        <a href="b.jpg">
+        <img src="b.jpg"></a>
+        <a href="c.jpg">
+        <img src="c.jpg"></a>
+        <a href="d.jpg">
+        <img src="d.jpg"></a>
+    </div>
+    <img src="none" id="none">
+    <script>
+        var pic = document.getElementsByTagName('a');
+        for(var i = 0; i < pic.length; i ++) {
+            var link = pic[i];
+            var big = document.getElementById('none');
+            link.onclick = function () {
+                big.id = 'big';
+                big = document.getElementById('big');
+                //alert(this.href); 此刻this表示所点击的元素。
+                big.src = this.href;
+                return false;
+            }
+        }
+        console.log(pic);
+    </script>
+</body>
+</html>
