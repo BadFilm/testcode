@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="put" value="Choose what you will buy">
+    <select id="fruits">
+        <option value="1">banana</option>
+        <option value="2">grape</option>
+        <option value="3">apple</option>
+        <option value="4">pair</option>
+        <option value="5">lemon</option>
+    </select>
+
+    <script>
+        var put = document.getElementById('put');
+        put.onclick = function() {
+            var fruits = document.getElementById('fruits');
+            var fruit = fruits.getElementsByTagName('option');
+            console.log(fruit);
+            var num = parseInt(Math.random() * fruit.length);
+            var option = fruit[num];
+            option.selected = true;
+        }
+    </script>
+</body>
+</html>
