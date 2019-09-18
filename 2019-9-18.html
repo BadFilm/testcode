@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <input type="submit" id="check" value="获取文本框的值"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+    <input type="text"> <br>
+<script>
+    var val = document.getElementsByTagName('input'); 
+    console.log(val);
+    var all = '';
+    for(var i = 0; i < val.length; i ++) {
+        if (val[i].type === 'text') {
+            val[i].value = '我是一句话';
+        }
+    }
+    var check = document.getElementById('check');
+    check.onclick = function() {
+        for(var i = 0; i < val.length; i ++) {
+            if (val[i].type === 'text') {
+                all += val[i].value + ' ';
+            }
+        }
+        all = all.split(' ');
+        all = all.join('!');
+        console.log(all);
+    }
+</script>
+<body>
+</body>
+</html>
