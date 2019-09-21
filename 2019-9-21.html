@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        tr { 
+            text-align: center;
+        }
+        table {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%, -50%)
+        }
+        tr:first-child, tr:last-child {
+            background-color: rgb(61, 116, 141);
+        }
+    </style>
+</head>
+<body>
+    <table border="1px" cellspacing="0" rules="all" id="checks">
+        <tr>
+            <td > <input type="checkbox" id="check"> </td>
+            <td width="45px">全选</td>
+        </tr>
+        <tr>
+            <td> <input type="checkbox"> </td>
+            <td width="25px">1</td>
+            <td width="150px">华为mate20</td>
+            <td width="42px">4900</td>
+        </tr>
+        <tr>
+            <td> <input type="checkbox"> </td>
+            <td>2</td>
+            <td>红米pro20</td>
+            <td>2900</td>
+        </tr>
+        <tr>
+            <td> <input type="checkbox"> </td>
+            <td>3</td>
+            <td>戴尔旗舰版</td>
+            <td>5100</td>
+        </tr>
+        <tr>
+            <td> <input type="checkbox"> </td>
+            <td>4</td>
+            <td>龙盾键盘</td>
+            <td>299</td>
+        </tr>
+        <tr>
+            <td> <input type="checkbox"> </td>
+            <td>5</td>
+            <td>蓝牙双耳耳机</td>
+            <td>1999</td>
+        </tr>
+        <tr>
+            <td> <input type="checkbox" id="unCheck"> </td>
+            <td width="45px">反选</td>
+        </tr>
+    </table>
+
+    <script>
+            var a = '1234567123';
+            a = a.split('');
+            console.log(a.join(' '));
+        var check = document.getElementById('check');
+        check.onclick = function() {
+            var checks = document.getElementById('checks');
+            var product = checks.getElementsByTagName('input');
+            for(var i = 1; i < product.length - 1; i ++) {
+                console.log(product[i].checked,check.checked);
+                product[i].checked = this.checked;
+            }
+        }
+        var unCheck = document.getElementById('unCheck');
+        
+        unCheck.onclick = function() {
+            var checks = document.getElementById('checks');
+            var product = checks.getElementsByTagName('input');
+            for(var i = 1; i < product.length - 1; i ++) {
+                console.log(product[i].checked,check.checked);
+                if(product[i].checked !== this.checked) {
+                    product[i].checked = this.checked;
+                }  else {
+                    product[i].checked = !(this.checked);
+                }
+            }
+        }
+        
+        var checks = document.getElementById('checks');
+        var product = checks.getElementsByTagName('input');
+        product[1].onclick = function () {
+            for (var i = 1; i < product.length - 1; i ++) {
+                if(product[i].checked != 'checked') {
+                    return;
+                }
+            }
+            check.checked = this.checked;
+        }
+    </script>
+</body>
+</html>
