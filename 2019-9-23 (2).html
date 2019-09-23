@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "one" class = "me" age = "19"></div>
+    <script>
+
+        function Node(one) {
+            this.className = one.className || 'asdfg';
+        }
+
+        var o = new Node({
+            className:'love'
+        });
+        
+        console.log(o);
+    </script>
+</body>
+</html>
