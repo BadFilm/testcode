@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+
+        if(box.hasChildNodes()) {
+            for(var i = 0; i < box.children.length; i ++) {
+                if(i % 2 === 0) {
+                    box.children[i].style.backgroundColor = 'skyblue';
+                } else {
+                    box.children[i].style.backgroundColor = 'deeppink';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
