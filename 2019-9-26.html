@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            position: relative;
+            left: 50%;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        li {
+            
+            background-color: rgba(75, 22, 62, 0.719);
+            border: 1px solid rgb(77, 21, 67);
+        }
+        a {
+            text-decoration: none;
+            font-size: 25px;
+            width: 35px;
+            height: 17px;
+            background-color: rgba(75, 22, 62, 0.719);
+            border: 1px solid rgb(77, 21, 67);
+        }
+        .link {
+            background-color: rgb(243, 139, 139);
+        }
+    </style>
+</head>
+<body>
+    <div id="a1">dfhb</div>
+    <div>dsf</div>
+    <div>asd</div><div id="a2">asdf</div><div>dafcv</div>
+    <div>bfcgv</div>
+    <script>
+        var a2 = document.getElementById('a2');
+        var b = a2.nextElementSibling;
+        b.onclick = function () {
+            alert('as');
+        }
+        var c = a2.previousSibling;
+        c.onclick = function() {
+            alert('qw');
+        }
+    </script>
+</body>
+</html>
