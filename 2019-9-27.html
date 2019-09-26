@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="ss">Element.innerHtml 动态多次添加元素 优化法</h3>
+    <input type="button" value="点击实现" id="btn">
+    <script>
+        var btn = document.getElementById('btn');
+
+        btn.onclick = function () {
+            var girls = ['貂蝉', '西施', '杨玉环', '王昭君']; 
+            
+            var newGirl = [];
+
+            newGirl.push('</ul>');
+
+            for(var i = 0; i < girls.length; i ++) {
+                var girl = girls[i];
+                newGirl.push('<li>' + girl + '</li>');
+            }
+
+            newGirl.push('</ul>');
+
+            var ss = document.getElementById('ss');
+            
+            ss.innerHTML = newGirl.join('');
+        }
+    </script>
+</body>
+</html>
