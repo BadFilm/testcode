@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="click">
+    <div id="sentence"></div>
+    <script>
+        var btn = document.getElementById('btn');
+        var sen = document.getElementById('sentence');
+        var sens = ['那些我想要的', '也曾经拥有过', '但,终将如流沙逝于掌心', '一去不返'];
+
+        btn.onclick = function () {
+            var ul = document.createElement('ul');
+            sen.appendChild(ul);
+            for(var i = 0; i < sens.length; i ++) {
+                var li = document.createElement('li');
+                ul.appendChild(li);
+                li.innerText = sens[i];
+                li.onmouseover = liOver;
+                li.onmouseout = liOut;
+            }
+
+            function liOver() {
+                this.style.backgroundColor = 'skyblue';
+            }
+            function liOut() {
+                this.style.backgroundColor = '';
+            }
+        }
+    </script>
+</body>
+</html>
