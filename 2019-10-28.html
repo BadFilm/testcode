@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            height: 1000px;
+        }
+        #pic {
+            position: relative;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="http://pic28.nipic.com/20130501/11528256_125028437194_2.gif" id="pic" width="60px">
+    <script>
+        var pic = document.getElementById('pic');
+
+        document.onmousemove = function (e) {
+            e = e || window.event;
+            pic.style.left = e.pageX + 'px';
+            pic.style.top = e.pageY + 'px';
+        }
+    </script>
+</body>
+</html>
