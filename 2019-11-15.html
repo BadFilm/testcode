@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #aacdca;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">move</button>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById('box');
+        var btn = document.getElementById('btn');
+        var num;
+        btn.onclick = function () {
+            num = setInterval(function() {
+                if(box.offsetLeft + 50 < 500) {
+                    box.style.left = box.offsetLeft + 10 + 'px';
+                    console.log( box.style.left );
+                } else {
+                    box.style.left = 500 + 'px';
+                    console.log(box.style.left);
+                    clearInterval(num);
+                }
+            },15);
+        }
+    </script>
+</body>
+</html>
