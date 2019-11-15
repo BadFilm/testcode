@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body{
+            background-color: rgb(248, 141, 141);
+            width: 100%;
+            height: 100%;
+        }
+        #post {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 200px;
+            width: 890px;
+        }
+        .date {
+            padding-right: 20px;
+            line-height: 200px;
+            text-align: center;
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(143, 31, 31, 0.541);
+            color: aliceblue;
+            font-size: 35px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div id="post">
+        <h1>
+            距离2020年仅剩
+        </h1>
+        <div id="day" class="date"></div>
+        <div id="hour" class="date"></div>
+        <div id="minute" class="date"></div>
+        <div id="second" class="date"></div>
+    </div>
+    <script>
+        var day = document.getElementById('day');
+        var hour = document.getElementById('hour');
+        var minute = document.getElementById('minute');
+        var second = document.getElementById('second');
+
+        var endDate = new Date ('2020-1-1 0:0:0');
+
+        setInterval(count, 1000);
+        count();
+        function count() {
+            var starDate = new Date();
+
+            var interval = endDate - starDate;
+            interval /= 1000; 
+            day.innerText = Math.round( interval / 60 / 60 / 24) + '天';
+            hour.innerText = Math.round( interval / 60 / 60 % 24) + '时';
+            minute.innerText = Math.round( interval / 60 % 60 ) + '分';
+            second.innerText = Math.round( interval % 60 ) + '秒';
+            
+        }
+    </script>
+</body>
+</html>
