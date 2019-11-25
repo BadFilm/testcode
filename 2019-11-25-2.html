@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Students(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        //prototype 是构造函数的原型对象 将函数放置到原型里可以提高效率。
+        Students.prototype.manner = function () {
+
+            console.log(this.name + ' ' + '敬礼');
+        }
+        //记得要加 new
+        var stu1 = new Students('Anna', 19, 'female');
+        var stu2 = new Students('Bob', 19, 'male');
+        //调用函数要加括号
+        console.log(stu1.name,stu2.age);
+        stu1.manner();
+        stu2.manner();
+    </script>
+</body>
+</html>
