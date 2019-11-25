@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 new object();
+        var hero = new Object();
+        hero.name = 'Anna';
+        hero.age = '19';
+        hero.run = function ()  {
+            console.log(hero.name + ' ' + 'run');
+        }
+
+        console.log( hero.name ,hero.age);
+        hero.run();
+
+        //2 对象字面量 var new = {};
+        var hero = {
+            name: 'Anna',
+            age: '19',
+            run: function () {
+                console.log(this.name + ' ' + 'run');
+            }
+        }
+        console.log( hero.name ,hero.age);
+        hero.run();
+        // 3 工厂函数 
+        function createHeroes (name, age, run) {
+            this.name = name;
+            this.age = age;
+            this.run = function() {
+                console.log(this.name + ' ' + 'run');
+            }
+            return this;
+        } 
+
+        var hero1 = createHeroes('Anna', '19');
+        
+        console.log( hero1.name ,hero1.age);
+        hero1.run();
+    </script>
+</body>
+</html>
