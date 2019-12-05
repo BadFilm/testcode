@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 实现一个放大镜 淘宝商品界面 -->
+    <div id="box" style="position: relative; top: 100px; left: 50px;">
+            <div id="small" style="float: left; width: 250px; display: flex;margin-right: 40px;border: 1px solid black;">
+                <img id="small_img" src="E:\uc\图片\girl.jpg" alt="" style="width: 250px;">
+                
+                <div id="scroll" style="display:none;position: absolute;width: 100px;height: 100px;background-color: rgba(250, 250, 250, 0.315);">
+
+                </div>
+            </div>
+
+        <div id="big" style="float: left;width: 400px; height: 400px;overflow: hidden;border: 1px solid black;">
+            <img src="E:\uc\图片\girl.jpg" style="position: relative;" id="big_img">
+        </div>
+    </div>
+
+    <script>
+        var scroll = document.getElementById('scroll');
+        var big_img = document.getElementById('big_img');
+        var small_img = document.getElementById('small_img');
+        small.onmousemove = function(e) {
+            big.style.display = 'block';
+            small_img.style.cursor = 'move';
+            scroll.style.cursor = 'move';
+            scroll.style.display = 'block';
+            var scroll_x = e.pageX;
+            var scroll_y = e.pageY;
+            
+            if(scroll_x < 100) {
+                scroll.style.left = 0  + 'px';
+            } else if(scroll_x > 251){
+                scroll.style.left =  151 + 'px';
+            } else {
+                scroll.style.left = scroll_x - 100  + 'px';
+            }
+            
+            if(scroll_y < 150) {
+                scroll.style.top = 0  + 'px';
+            } else if(scroll_y > 326){
+                scroll.style.top =  174 + 'px';
+            } else {
+                scroll.style.top = scroll_y - 150  + 'px';
+            }
+            
+            big_img.style.left =  -(scroll.offsetLeft * big_img.offsetWidth) / small_img.offsetWidth + 'px';
+            big_img.style.top =  -(scroll.offsetTop * big_img.offsetHeight) / small_img.offsetHeight + 'px';
+            console.log(big_img.style.left);
+        }
+
+        small.onmouseleave = function (e) {
+            scroll.style.display = 'none';
+            big.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
